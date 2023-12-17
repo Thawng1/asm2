@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Robot</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="url"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    img {
+      display: block;
+      margin-top: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form action="/robot/edit/{{ robot._id }}" method="post">
+      <h1>Edit Robot</h1>
+      <div class="mb-3">
+        <label for="model" class="form-label">Robot model:</label>
+        <input type="text" name="model" id="model" class="form-control" required value="{{ robot.model }}">
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Robot image:</label>
+        <input type="url" name="image" id="image" class="form-control" required value="{{ robot.image }}">
+        <img src="{{ robot.image }}" alt="" width="100" height="100">
+      </div>
+      <div class="mb-3">
+        <input type="submit" value="Edit" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+
+ 
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <a class="btn btn-info" href="/brand/add">Add new Brand</a>
+      <a class="btn btn-danger" href="/brand/deleteall" onclick="return confirm('Are you sure to delete all brands?');">Delete All</a>
+    </div>
+  </div>
+
+  <table class="table mt-4 table-secondary">
+    <thead>
+      <tr>
+        <th>Brand name</th>
+        <th>Brand country</th>
+        
+         <div class="col-md-6 text-center">
+        <th colspan="2">Menu</th>
+        </div>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each brands }}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ country }}</td>
+        <td>
+          <a class="btn btn-warning" href="/brand/edit/{{ _id }}">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-danger" href="/brand/delete/{{ _id }}"
+            onclick="return confirm('Are you sure to delete this brand?');">Delete</a>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
