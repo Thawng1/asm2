@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/add', (req, res) => {
-   res.render('brand/add');
+   res.render('brand/add',{layout: 'layoutadmin'});
 })
 
 router.post('/add', async (req, res) => {
@@ -52,7 +52,7 @@ router.get('/deleteall', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var brand = await BrandModel.findById(id);
-   res.render('brand/edit', { brand });
+   res.render('brand/edit', { brand ,layout: 'layoutadmin'});
 })
 
 router.post('/edit/:id', async (req, res) => {
