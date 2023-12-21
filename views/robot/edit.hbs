@@ -73,6 +73,10 @@
         <img src="{{ robot.image }}" alt="" width="100" height="100">
       </div>
       <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <input type="text" name="price" id="price" class="form-control" required value="{{ robot.price }}">
+      </div>
+      <div class="mb-3">
         <input type="submit" value="Edit" class="btn btn-primary">
       </div>
     </form>

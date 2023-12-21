@@ -13,11 +13,10 @@
 
 <body>
   <div class="container mt-5">
-    <h1>Show Products</h1>
+    <h1>All Products</h1>
 
     <!-- Kiểm tra nếu có sản phẩm Robot để hiển thị -->
     {{#if robots.length}}
-      <h2>Robots</h2>
       <div class="row mt-4">
         {{#each robots}}
           <div class="col-md-4 mb-4">
@@ -37,7 +36,6 @@
 
     <!-- Kiểm tra nếu có sản phẩm Doll để hiển thị -->
     {{#if dolls.length}}
-      <h2>Dolls</h2>
       <div class="row mt-4">
         {{#each dolls}}
           <div class="col-md-4 mb-4">

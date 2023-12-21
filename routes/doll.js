@@ -6,18 +6,18 @@ var BrandModel = require('../models/BrandModel');
 router.get('/', async (req, res) => {
    var dolls = await DollModel.find({}).populate('brand');
    //Path: views/doll/index.hbs
-   res.render('doll/index', { dolls });
+   res.render('doll/index', { dolls, layout: 'layoutadmin'});
 })
 
-router.get('/customer', async (req, res) => {
+router.get('/show', async (req, res) => {
    var dolls = await DollModel.find({}).populate('brand');
    //Path: views/doll/index.hbs
-   res.render('doll/list', { dolls });
+   res.render('doll/show', { dolls });
 })
 
 router.get('/add', async (req, res) => {
    var brands = await BrandModel.find({});
-   res.render('doll/add', { brands });
+   res.render('doll/add', { brands , layout: 'layoutadmin' });
 })
 
 router.post('/add', async (req, res) => {
@@ -36,7 +36,7 @@ router.get('/edit/:id', async (req, res) => {
    var id = req.params.id;
    var doll = await DollModel.findById(id);
    var brands = await BrandModel.find({});
-   res.render('doll/edit', { doll, brands });
+   res.render('doll/edit', { doll, brands , layout: 'layoutadmin' });
 })
 
 router.post('/edit/:id', async (req, res) => {
@@ -67,7 +67,7 @@ router.post('/search', async (req, res) => {
    var keyword = req.body.keyword;
    //SQL: SELECT * FROM dolls WHERE model LIKE '%keyword%'
    var dolls = await DollModel.find({ model: new RegExp(keyword, "i") }).populate('brand');
-   res.render('doll/index', { dolls })
+   res.render('doll/index', { dolls, layout: 'layoutadmin' })
 })
 
 module.exports = router;

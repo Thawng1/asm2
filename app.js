@@ -6,10 +6,12 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 // 1A. config location of routers
 var robotRouter = require('./routes/robot');
 var dollRouter = require('./routes/doll');
 var brandRouter = require('./routes/brand');
+var adminRouter = require('./routes/admin');
 var app = express();
 
 var hbs = require('hbs');
@@ -43,6 +45,7 @@ app.use('/users', usersRouter);
 app.use('/robot', robotRouter);
 app.use('/doll', dollRouter);
 app.use('/brand', brandRouter);
+app.use('/admin', adminRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

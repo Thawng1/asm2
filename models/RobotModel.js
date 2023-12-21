@@ -3,7 +3,7 @@ var RobotSchema = mongoose.Schema({
    model: String,
    price: Number,
    image: String,
-   category: String,
+
    brand: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'brands'  // 'brands': collection
