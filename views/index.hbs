@@ -14,8 +14,6 @@
 <body>
   <div class="container mt-5">
     <h1>All Products</h1>
-
-    <!-- Kiểm tra nếu có sản phẩm Robot để hiển thị -->
     {{#if robots.length}}
       <div class="row mt-4">
         {{#each robots}}
@@ -34,7 +32,6 @@
       <p>No robot products available.</p>
     {{/if}}
 
-    <!-- Kiểm tra nếu có sản phẩm Doll để hiển thị -->
     {{#if dolls.length}}
       <div class="row mt-4">
         {{#each dolls}}
