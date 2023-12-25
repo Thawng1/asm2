@@ -26,8 +26,6 @@ router.post('/add', async (req, res) => {
    await RobotModel.create(robot);
    res.redirect('/robot');
 })
-
-
 router.get('/delete/:id', async (req, res) => {
    await RobotModel.findByIdAndDelete(req.params.id);
    res.redirect('/robot');
